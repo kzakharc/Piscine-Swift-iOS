@@ -18,6 +18,7 @@ class ViewController: UIViewController {
 
     @IBAction func touchClickMeButton(_ sender: UIButton) {
         helloWordLabel.text = "Hello World !"
+        print("Hello World !")
     }
 }
 

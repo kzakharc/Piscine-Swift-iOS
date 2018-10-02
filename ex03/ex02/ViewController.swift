@@ -326,7 +326,7 @@ class ViewController: UIViewController {
         switch symbol {
         case .plus?:
             let value = firstValue! + (secondValue ?? firstValue!)
-            if value != Double.infinity {
+            if value < Double.infinity {
                 resultLabel.text = process(value)
                 firstValue = value
             } else {
@@ -334,7 +334,7 @@ class ViewController: UIViewController {
             }
         case .minus?:
             let value = firstValue! - (secondValue ?? firstValue!)
-            if value != Double.infinity {
+            if value < Double.infinity {
                 resultLabel.text = process(value)
                 firstValue = value
             } else {
@@ -342,7 +342,7 @@ class ViewController: UIViewController {
             }
         case .star?:
             let value = firstValue! * (secondValue ?? firstValue!)
-            if value != Double.infinity {
+            if value < Double.infinity {
                 resultLabel.text = process(value)
                 firstValue = value
             } else {

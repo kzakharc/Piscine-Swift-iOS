@@ -26,10 +26,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     
     private var lastSymbol: Operators?
-    private var firstValue: Int?
-    private var secondValue: Int?
+    private var firstValue: Double?
+    private var secondValue: Double?
     
-    private var result: Int = 0
+    private var result: Double = 0
     var needToRefresh = false
     
     override func viewDidLoad() {
@@ -169,7 +169,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func touchNEGButton(_ sender: UIButton) {
-        guard let number = Int(resultLabel.text!) else { return }
+        guard let number = Double(resultLabel.text!) else { return }
         
         if resultLabel.text != "0" && resultLabel.text != "Error" {
             resultLabel.text = number > 0 ? ("-" + obtainPreviousResult()) : String(process(-number))
@@ -192,7 +192,7 @@ class ViewController: UIViewController {
             firstValue = 0
         }
         if secondValue != nil {
-            secondValue = Int(resultLabel.text!)
+            secondValue = Double(resultLabel.text!)
         }
         if firstValue != nil && secondValue != nil {
             calculate(with: lastSymbol ?? .plus)
@@ -220,7 +220,7 @@ class ViewController: UIViewController {
             firstValue = 0
         }
         if secondValue != nil {
-            secondValue = Int(resultLabel.text!)
+            secondValue = Double(resultLabel.text!)
         }
         
         if firstValue != nil && secondValue != nil {
@@ -249,7 +249,7 @@ class ViewController: UIViewController {
             firstValue = 0
         }
         if secondValue != nil {
-            secondValue = Int(resultLabel.text!)
+            secondValue = Double(resultLabel.text!)
         }
         
         if firstValue != nil && secondValue != nil {
@@ -278,7 +278,7 @@ class ViewController: UIViewController {
             firstValue = 0
         }
         if secondValue != nil {
-            secondValue = Int(resultLabel.text!)
+            secondValue = Double(resultLabel.text!)
         }
         
         if firstValue != nil && secondValue != nil {
@@ -301,7 +301,7 @@ class ViewController: UIViewController {
             return
         }
         if secondValue != nil {
-            secondValue = Int(resultLabel.text!)
+            secondValue = Double(resultLabel.text!)
         }
         
         calculate(with: lastSymbol!)
@@ -313,7 +313,7 @@ class ViewController: UIViewController {
     }
     
     func setupValues() {
-        firstValue = Int(obtainPreviousResult())
+        firstValue = Double(obtainPreviousResult())
     }
     
     fileprivate func calculate(with symbol: Operators?) {
@@ -325,31 +325,28 @@ class ViewController: UIViewController {
         
         switch symbol {
         case .plus?:
-            if let (_, i) = Int.addWithOverflow(firstValue! + (secondValue ?? firstValue!)), i {
-                resetAll()
-                break
-            } else {
-                let value = firstValue! + (secondValue ?? firstValue!)
+            let value = firstValue! + (secondValue ?? firstValue!)
+            if value != Double.infinity {
                 resultLabel.text = process(value)
                 firstValue = value
+            } else {
+                resetAll()
             }
         case .minus?:
-            if let (_, i) = Int.subtractWithOverflow(firstValue! - (secondValue ?? firstValue!)), i {
-                resetAll()
-                break
-            } else {
-                let value = firstValue! - (secondValue ?? firstValue!)
+            let value = firstValue! - (secondValue ?? firstValue!)
+            if value != Double.infinity {
                 resultLabel.text = process(value)
                 firstValue = value
+            } else {
+                resetAll()
             }
         case .star?:
-            if let (_, i) = Int.multiplyWithOverflow(firstValue! * (secondValue ?? firstValue!)), i {
-                resetAll()
-                break
-            } else {
-                let value = firstValue! * (secondValue ?? firstValue!)
+            let value = firstValue! * (secondValue ?? firstValue!)
+            if value != Double.infinity {
                 resultLabel.text = process(value)
                 firstValue = value
+            } else {
+                resetAll()
             }
         case .slash?:
             let value = firstValue! / (secondValue ?? firstValue!)
@@ -358,8 +355,7 @@ class ViewController: UIViewController {
         default:
             break
         }
-        
-        //secondValue = nil
+
         needToRefresh = true
     }
     
@@ -370,7 +366,7 @@ class ViewController: UIViewController {
         return "0"
     }
     
-    func process(_ value: Int) -> String {
+    func process(_ value: Double) -> String {
         return String(value)
     }
     

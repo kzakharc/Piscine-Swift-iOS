@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D33-cv-aWL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Death Note-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="DeathNoteViewController" customModule="Death_Note" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="0Lf-Hx-gvO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="era-TD-d1O" customClass="DeadPeopleTableViewCell" customModule="Death_Note" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="era-TD-d1O" id="aKg-Xg-2Bo">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="aVh-nR-oZU"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nNa-TJ-kzY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0Lf-Hx-gvO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="IxH-zU-k3V"/>
+                            <constraint firstItem="0Lf-Hx-gvO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="OSK-FQ-fo6"/>
+                            <constraint firstItem="0Lf-Hx-gvO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tap-6e-X2G"/>
+                            <constraint firstItem="0Lf-Hx-gvO" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Xju-BS-dDz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Death Note" id="fPy-w2-tLG">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="27g-B3-ho9">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="e00-Fn-2Ks" kind="show" id="8sg-7Z-4fk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="0Lf-Hx-gvO" id="NOh-ot-8Og"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079.2" y="133.5832083958021"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8FF-Vl-LuG">
+            <objects>
+                <viewController id="e00-Fn-2Ks" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6t7-rh-fd2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bks-Il-Tjz">
+                                <rect key="frame" x="0.0" y="84" width="375" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FfK-9M-4Ee"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dsc-HG-YXD">
+                                <rect key="frame" x="0.0" y="114" width="375" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="vbQ-1P-4Ij"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="560278969.41475201">
+                                    <!--2018-10-03 17:02:49 +0000-->
+                                </date>
+                            </datePicker>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zC5-2b-xN9">
+                                <rect key="frame" x="20" y="227" width="335" height="140"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="YfX-Xx-ohN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.66799789669999998" green="0.53369969080000002" blue="0.32449216479999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bks-Il-Tjz" firstAttribute="width" secondItem="6t7-rh-fd2" secondAttribute="width" id="ARo-3b-pao"/>
+                            <constraint firstItem="bks-Il-Tjz" firstAttribute="centerX" secondItem="6t7-rh-fd2" secondAttribute="centerX" id="BNM-zc-YE0"/>
+                            <constraint firstItem="zC5-2b-xN9" firstAttribute="centerX" secondItem="6t7-rh-fd2" secondAttribute="centerX" id="Lfj-B3-ntc"/>
+                            <constraint firstItem="zC5-2b-xN9" firstAttribute="width" secondItem="6t7-rh-fd2" secondAttribute="width" constant="-40" id="MWZ-MS-3T0"/>
+                            <constraint firstItem="sbD-Nb-KsO" firstAttribute="top" secondItem="bks-Il-Tjz" secondAttribute="top" constant="-20" id="UGf-9j-7zj"/>
+                            <constraint firstItem="zC5-2b-xN9" firstAttribute="top" secondItem="dsc-HG-YXD" secondAttribute="bottom" constant="38" id="fsz-MZ-BW6"/>
+                            <constraint firstItem="dsc-HG-YXD" firstAttribute="top" secondItem="bks-Il-Tjz" secondAttribute="bottom" id="mvQ-E3-DCI"/>
+                            <constraint firstItem="dsc-HG-YXD" firstAttribute="width" secondItem="6t7-rh-fd2" secondAttribute="width" id="oAR-nv-Z0z"/>
+                            <constraint firstItem="dsc-HG-YXD" firstAttribute="centerX" secondItem="6t7-rh-fd2" secondAttribute="centerX" id="tJm-f9-zqq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sbD-Nb-KsO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hV8-Qn-Adj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1768.8" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LoY-Ur-YsG">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tvc-XD-0sO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D33-cv-aWL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="OVz-c2-oGa">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Hde-Pa-ELN"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="358" y="134"/>
+        </scene>
+    </scenes>
+</document>

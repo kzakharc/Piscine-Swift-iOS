@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08ED70172165581F003774CC /* NewGhoulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ED70162165581F003774CC /* NewGhoulViewController.swift */; };
 		1FA352452164CF85000B4A34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA352442164CF85000B4A34 /* AppDelegate.swift */; };
 		1FA352472164CF85000B4A34 /* DeathNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA352462164CF85000B4A34 /* DeathNoteViewController.swift */; };
 		1FA3524A2164CF85000B4A34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FA352482164CF85000B4A34 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08ED70162165581F003774CC /* NewGhoulViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGhoulViewController.swift; sourceTree = "<group>"; };
 		1FA352412164CF85000B4A34 /* Death Note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Death Note.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA352442164CF85000B4A34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FA352462164CF85000B4A34 /* DeathNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathNoteViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				1FA352462164CF85000B4A34 /* DeathNoteViewController.swift */,
 				1FA3526A2164D599000B4A34 /* DeathNoteViewControllerExtension.swift */,
+				08ED70162165581F003774CC /* NewGhoulViewController.swift */,
 				1FA3525C2164D194000B4A34 /* TableViewCells */,
 				1FA352622164D381000B4A34 /* TableCellsObject */,
 			);
@@ -222,6 +225,7 @@
 				1FA3524D2164CF85000B4A34 /* Death_Note.xcdatamodeld in Sources */,
 				1FA3527021652A94000B4A34 /* UITableViewCellExtension.swift in Sources */,
 				1FA352642164D3C0000B4A34 /* DeadPeopleTableCellObject.swift in Sources */,
+				08ED70172165581F003774CC /* NewGhoulViewController.swift in Sources */,
 				1FA352472164CF85000B4A34 /* DeathNoteViewController.swift in Sources */,
 				1FA352602164D200000B4A34 /* DeadPeopleTableViewCell.swift in Sources */,
 				1FA352452164CF85000B4A34 /* AppDelegate.swift in Sources */,
@@ -373,6 +377,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9596FLHWUS;
 				INFOPLIST_FILE = "Death Note/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kzakharc.Death-Note";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -388,6 +393,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9596FLHWUS;
 				INFOPLIST_FILE = "Death Note/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kzakharc.Death-Note";
 				PRODUCT_NAME = "$(TARGET_NAME)";

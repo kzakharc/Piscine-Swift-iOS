@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,20 +19,28 @@
                 <rect key="frame" x="0.0" y="0.0" width="360" height="69.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbg-Gc-QAY">
-                        <rect key="frame" x="16" y="11" width="45" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDc-de-DY3">
-                        <rect key="frame" x="16" y="38" width="328" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Death time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsH-kK-qvW">
-                        <rect key="frame" x="260" y="11" width="84" height="21"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfy-8h-gxv">
+                        <rect key="frame" x="16" y="11" width="328" height="25"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbg-Gc-QAY">
+                                <rect key="frame" x="0.0" y="0.0" width="244.5" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Death time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsH-kK-qvW">
+                                <rect key="frame" x="244.5" y="0.0" width="83.5" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="6NY-aG-b2J"/>
+                        </constraints>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDc-de-DY3">
+                        <rect key="frame" x="16" y="46" width="328" height="13"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -39,16 +48,16 @@
                 </subviews>
                 <color key="backgroundColor" red="0.66799789669999998" green="0.53369969081189883" blue="0.32449216476374365" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
+                    <constraint firstItem="cfy-8h-gxv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="DPt-i8-Q3A"/>
                     <constraint firstAttribute="trailingMargin" secondItem="YDc-de-DY3" secondAttribute="trailing" id="I2h-ng-8iV"/>
-                    <constraint firstItem="YDc-de-DY3" firstAttribute="top" secondItem="zbg-Gc-QAY" secondAttribute="bottom" constant="6.5" id="LNG-Mb-wly"/>
-                    <constraint firstItem="zbg-Gc-QAY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Lbz-6b-r67"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="cfy-8h-gxv" secondAttribute="trailing" id="II6-R4-le7"/>
                     <constraint firstItem="YDc-de-DY3" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="QQ0-oZ-Gg7"/>
-                    <constraint firstItem="OsH-kK-qvW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="U7Y-VE-lZA"/>
                     <constraint firstItem="YDc-de-DY3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="YF7-aZ-9Cu"/>
-                    <constraint firstItem="zbg-Gc-QAY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="fKw-zq-NLU"/>
-                    <constraint firstItem="OsH-kK-qvW" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="sIa-aP-c6e"/>
+                    <constraint firstItem="YDc-de-DY3" firstAttribute="top" secondItem="cfy-8h-gxv" secondAttribute="bottom" constant="10" id="ZNq-5Y-g4V"/>
+                    <constraint firstItem="cfy-8h-gxv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="fRB-Lp-pzr"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="deathDescription" destination="YDc-de-DY3" id="OfM-Kk-ljL"/>

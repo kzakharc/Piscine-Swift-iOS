@@ -25,7 +25,6 @@ class DeathNoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupNavBarSettings()
         
         tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         setupCellData()
@@ -41,13 +40,21 @@ class DeathNoteViewController: UIViewController {
         dataSource.append(thirdCell)
     }
     
-//    func setupNavBarSettings() {
-//        let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(touchRightBarButtonItem))
-//        navigationItem.rightBarButtonItem = rightBarButtonItem
-//    }
-//
-//    @objc func touchRightBarButtonItem() {
-////        performSegue(withIdentifier: String(describing: AddPersonViewController.self), sender: self)
-//    }
+    @IBAction func addPersonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "add_person", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "add_person" {
+            if let destinationVC = segue.destination as? NewGhoulViewController {
+                destinationVC.completionHandler = { [weak self] person in
+                    guard let `self` = self else { return }
+                    self.dataSource.append(person)
+                    let indexSet = IndexSet(integer: self.dataSource.count - 1)
+                    self.tableView.insertSections(indexSet, with: .automatic)
+                }
+            }
+        }
+    }
 }
 

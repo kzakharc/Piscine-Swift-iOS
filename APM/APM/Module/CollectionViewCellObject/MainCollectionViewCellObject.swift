@@ -11,10 +11,10 @@ import UIKit
 
 class MainCollectionViewCellObject {
     
-    var image = UIImage()
+    var url: URL?
     
-    init(_ image: UIImage) {
-        self.image = image
+    init(_ url: URL?) {
+        self.url = url
     }
 }
 

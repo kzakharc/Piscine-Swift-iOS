@@ -44,7 +44,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="o1x-Bl-coz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="8ER-a3-Mue"/>
                             <constraint firstItem="o1x-Bl-coz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="b5P-4z-Nr9"/>
@@ -56,20 +56,50 @@
                     <navigationItem key="navigationItem" title="Images" id="Gjh-nM-uoI"/>
                     <connections>
                         <outlet property="collectionView" destination="o1x-Bl-coz" id="8pW-e8-VAR"/>
+                        <segue destination="IuY-YU-rKq" kind="show" id="sdH-kt-OBH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
+        <!--Scroll View Controller-->
+        <scene sceneID="owF-El-NEU">
+            <objects>
+                <viewController id="IuY-YU-rKq" customClass="ScrollViewController" customModule="APM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZmW-jv-kzP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ijl-qD-B5e">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ijl-qD-B5e" firstAttribute="centerY" secondItem="ZmW-jv-kzP" secondAttribute="centerY" id="VUk-Ns-LxG"/>
+                            <constraint firstItem="Ijl-qD-B5e" firstAttribute="width" secondItem="ZmW-jv-kzP" secondAttribute="width" id="XM1-ja-8Uv"/>
+                            <constraint firstItem="Ijl-qD-B5e" firstAttribute="height" secondItem="ZmW-jv-kzP" secondAttribute="height" id="rDE-hw-hYE"/>
+                            <constraint firstItem="Ijl-qD-B5e" firstAttribute="centerX" secondItem="ZmW-jv-kzP" secondAttribute="centerX" id="zdu-RG-AMB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="z7y-83-M25"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3g2-Hk-VgL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839" y="134"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="h2f-kf-Y4E">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bV0-sf-J7T" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V3k-Gn-AtE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="V3k-Gn-AtE">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.81175313958056683" green="0.81175313958056683" blue="0.81175313958056683" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

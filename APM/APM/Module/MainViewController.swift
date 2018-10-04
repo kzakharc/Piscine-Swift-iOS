@@ -20,13 +20,14 @@ class MainViewController: UIViewController {
         "https://www.nasa.gov/sites/default/files/bwhi1apicaaamlo.jpg_large.jpg"
     ]
     private var dataSource = [MainCollectionViewCellObject]()
+    private var loadedImageCounter = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
         
         setupInitialDataSource()
-       // setupDataSource()
+        setupDataSource()
     }
     
     func registerCells() {
@@ -35,24 +36,34 @@ class MainViewController: UIViewController {
     }
     
     func setupInitialDataSource() {
-        for _ in 0...3 {
-            dataSource.append(MainCollectionViewCellObject(UIImage()))
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+        for _ in urls {
+            dataSource.append(MainCollectionViewCellObject(nil))
         }
     }
     
     func setupDataSource() {
         dataSource = [MainCollectionViewCellObject]()
         
-        //
-        
-        collectionView.reloadData()
+        for url in urls {
+            dataSource.append(MainCollectionViewCellObject(URL(string: url)))
+        }
     }
+    
+    func presentAlert(with url: String) {
+        let alert = UIAlertController(title: "Erorr", message: "Cannot access to \(url)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        present(alert, animated: true, completion: nil)
+    }
+
 }
 
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return dataSource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -60,6 +71,19 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         let cellObject = dataSource[indexPath.row]
         let cell: MainCollectionViewCell? = MainCollectionViewCell.build(collectionView, indexPath, cellObject)
         if let aCell = cell {
+            aCell.getImage = { [weak self] in
+                guard let strongSelf = self else { return }
+                
+                strongSelf.loadedImageCounter += 1
+                if strongSelf.loadedImageCounter == strongSelf.dataSource.count {
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                }
+            }
+            aCell.cantLoad = { [weak self] in
+                guard let strongSelf = self else { return }
+                
+                strongSelf.presentAlert(with: strongSelf.urls[indexPath.row])
+            }
             return aCell
         }
         return UICollectionViewCell()

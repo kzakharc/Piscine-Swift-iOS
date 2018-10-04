@@ -13,11 +13,33 @@ class MainCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var imageView: UIImageView!
     
+    var getImage:(() -> ())?
+    var cantLoad:(() -> ())?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.activityIndicator.hidesWhenStopped = true
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
     }
+    
+    private func downloadImage(from url: URL,  completion: @escaping (_ image: UIImage?) -> ()) {
+        print("Start downloading ...")
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            let urlContents = try? Data(contentsOf: url)
+            DispatchQueue.main.async {
+                print("Finish donwloading ...")
+                guard let imageData = urlContents else {
+                    completion(nil)
+                    print("Can't load image!")
+                    return
+                }
+                completion(UIImage(data: imageData))
+            }
+        }
+    }
+
 
 }
 
@@ -26,11 +48,20 @@ extension MainCollectionViewCell: CellRenewable {
     
     func shouldUpdateCell(withObject object: CellObjectConfigurable?) {
         if let cellObject = object as? MainCollectionViewCellObject {
-            if cellObject.image == UIImage() {
-                self.activityIndicator.startAnimating()
+            if let url = cellObject.url {
+                downloadImage(from: url) { [weak self] (image) in
+                    if let image = image {
+                        self?.activityIndicator.isHidden = true
+                        self?.activityIndicator.stopAnimating()
+                        self?.imageView.image = image
+                        self?.getImage?()
+                    } else {
+                        self?.cantLoad?()
+                    }
+                }
             } else {
-                self.activityIndicator.stopAnimating()
-                self.imageView.image = cellObject.image
+                activityIndicator.isHidden = false
+                activityIndicator.startAnimating()
             }
         }
     }

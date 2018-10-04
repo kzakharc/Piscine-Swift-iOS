@@ -20,6 +20,7 @@
 		1F152D3A21662658000EA96B /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F152D3921662657000EA96B /* UICollectionViewCell.swift */; };
 		1F152D3C2166267D000EA96B /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F152D3B2166267C000EA96B /* UICollectionView.swift */; };
 		1F152D3E216626AD000EA96B /* MainCollectionViewCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F152D3D216626AD000EA96B /* MainCollectionViewCellObject.swift */; };
+		1F152D5221668327000EA96B /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F152D5121668327000EA96B /* ScrollViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		1F152D3921662657000EA96B /* UICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		1F152D3B2166267C000EA96B /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		1F152D3D216626AD000EA96B /* MainCollectionViewCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCellObject.swift; sourceTree = "<group>"; };
+		1F152D5121668327000EA96B /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				1F152D102166217E000EA96B /* MainViewController.swift */,
+				1F152D5121668327000EA96B /* ScrollViewController.swift */,
 				1F152D2A21662359000EA96B /* CollectionViewCell */,
 				1F152D2C21662544000EA96B /* CollectionViewCellObject */,
 			);
@@ -224,6 +227,7 @@
 				1F152D34216625E6000EA96B /* CellRenewable.swift in Sources */,
 				1F152D282166234A000EA96B /* MainCollectionViewCell.swift in Sources */,
 				1F152D3C2166267D000EA96B /* UICollectionView.swift in Sources */,
+				1F152D5221668327000EA96B /* ScrollViewController.swift in Sources */,
 				1F152D35216625E6000EA96B /* CellObjectConfigurable.swift in Sources */,
 				1F152D3E216626AD000EA96B /* MainCollectionViewCellObject.swift in Sources */,
 			);

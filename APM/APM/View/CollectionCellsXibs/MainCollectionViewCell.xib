@@ -27,15 +27,25 @@
                         <rect key="frame" x="115.5" y="104.5" width="20" height="20"/>
                         <color key="color" red="0.19215686269999999" green="0.40784313729999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </activityIndicatorView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSr-Ni-Rh9">
+                        <rect key="frame" x="0.0" y="0.0" width="251" height="229"/>
+                        <connections>
+                            <action selector="touchImage:" destination="gTV-IL-0wX" eventType="touchUpInside" id="TM5-JR-G3n"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="HA0-xT-EE3" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="FDL-yE-MdG"/>
                 <constraint firstItem="O7N-1E-tE1" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="HbO-zY-0nh"/>
                 <constraint firstItem="O7N-1E-tE1" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="OzB-Ak-by9"/>
+                <constraint firstItem="eSr-Ni-Rh9" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="PXf-ll-TkC"/>
+                <constraint firstItem="eSr-Ni-Rh9" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="RLa-er-lK7"/>
                 <constraint firstItem="O7N-1E-tE1" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="VDD-fK-fgT"/>
                 <constraint firstItem="O7N-1E-tE1" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" id="bhs-vK-y0V"/>
                 <constraint firstItem="HA0-xT-EE3" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="ck4-SG-cjG"/>
+                <constraint firstItem="eSr-Ni-Rh9" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="i52-d5-nBU"/>
+                <constraint firstItem="eSr-Ni-Rh9" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" id="nGh-A1-gbS"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="251" height="229"/>

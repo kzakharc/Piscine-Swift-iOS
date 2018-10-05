@@ -17,10 +17,13 @@ class MainViewController: UIViewController {
         "https://www.nasa.gov/sites/default/files/thumbnails/image/opo0423a_hubble_ngc2403.jpg",
         "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/45025340661_7b9f8f9402_k.jpg",
         "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/images/649694main_pia15417-43_full.jpg",
-        "https://www.nasa.gov/sites/default/files/bwhi1apicaaamlo.jpg_large.jpg"
+        "https://www.nasa.gov/sites/default/files/bwhi1apicaaamlo.jpg_large.jpg",
+        "https://www.nasa.gov/sites/default/files/bwhi1apicaaamlo.jpg_large2.jpg"
     ]
     private var dataSource = [MainCollectionViewCellObject]()
     private var loadedImageCounter = 0
+    
+    var image: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +61,10 @@ class MainViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dectinationView: ScrollViewController = segue.destination as! ScrollViewController
+        dectinationView.image = self.image
+    }
 }
 
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -83,6 +90,18 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
                 guard let strongSelf = self else { return }
                 
                 strongSelf.presentAlert(with: strongSelf.urls[indexPath.row])
+                strongSelf.loadedImageCounter += 1
+                if strongSelf.loadedImageCounter == strongSelf.dataSource.count {
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                }
+            }
+            aCell.touchImage = { [weak self] image in
+                guard let strongSelf = self else { return }
+                strongSelf.image = image
+                
+                if strongSelf.image != nil {
+                    strongSelf.performSegue(withIdentifier: "ScrollViewController", sender: self)
+                }
             }
             return aCell
         }

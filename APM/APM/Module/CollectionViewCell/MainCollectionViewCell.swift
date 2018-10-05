@@ -15,6 +15,7 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     var getImage:(() -> ())?
     var cantLoad:(() -> ())?
+    var touchImage:((_ image: UIImage) -> ())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,15 +24,23 @@ class MainCollectionViewCell: UICollectionViewCell {
         activityIndicator.startAnimating()
     }
     
+    @IBAction func touchImage(_ sender: UIButton) {
+        if let image = self.imageView.image {
+            touchImage?(image)
+        }
+    }
+    
     private func downloadImage(from url: URL,  completion: @escaping (_ image: UIImage?) -> ()) {
         print("Start downloading ...")
-        DispatchQueue.global(qos: .userInitiated).async {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             
             let urlContents = try? Data(contentsOf: url)
             DispatchQueue.main.async {
                 print("Finish donwloading ...")
                 guard let imageData = urlContents else {
                     completion(nil)
+                    self?.activityIndicator.isHidden = true
+                    self?.activityIndicator.stopAnimating()
                     print("Can't load image!")
                     return
                 }

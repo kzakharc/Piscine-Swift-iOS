@@ -56,7 +56,7 @@
                     <navigationItem key="navigationItem" title="Images" id="Gjh-nM-uoI"/>
                     <connections>
                         <outlet property="collectionView" destination="o1x-Bl-coz" id="8pW-e8-VAR"/>
-                        <segue destination="IuY-YU-rKq" kind="show" id="sdH-kt-OBH"/>
+                        <segue destination="IuY-YU-rKq" kind="show" identifier="ScrollViewController" id="sdH-kt-OBH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -72,22 +72,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ijl-qD-B5e">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="604" translatesAutoresizingMaskIntoConstraints="NO" id="nwP-6u-T6w">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="604"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="nwP-6u-T6w" secondAttribute="bottom" id="IGK-fp-WpD"/>
+                                    <constraint firstItem="nwP-6u-T6w" firstAttribute="leading" secondItem="Ijl-qD-B5e" secondAttribute="leading" id="ftV-OU-9fB"/>
+                                    <constraint firstAttribute="trailing" secondItem="nwP-6u-T6w" secondAttribute="trailing" id="kqQ-Ww-lPr"/>
+                                    <constraint firstItem="nwP-6u-T6w" firstAttribute="top" secondItem="Ijl-qD-B5e" secondAttribute="top" id="nNg-Dr-pQY"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="IuY-YU-rKq" id="uov-NS-ea3"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ijl-qD-B5e" firstAttribute="centerY" secondItem="ZmW-jv-kzP" secondAttribute="centerY" id="VUk-Ns-LxG"/>
-                            <constraint firstItem="Ijl-qD-B5e" firstAttribute="width" secondItem="ZmW-jv-kzP" secondAttribute="width" id="XM1-ja-8Uv"/>
-                            <constraint firstItem="Ijl-qD-B5e" firstAttribute="height" secondItem="ZmW-jv-kzP" secondAttribute="height" id="rDE-hw-hYE"/>
-                            <constraint firstItem="Ijl-qD-B5e" firstAttribute="centerX" secondItem="ZmW-jv-kzP" secondAttribute="centerX" id="zdu-RG-AMB"/>
+                            <constraint firstItem="Ijl-qD-B5e" firstAttribute="leading" secondItem="ZmW-jv-kzP" secondAttribute="leading" id="2Kd-85-uUm"/>
+                            <constraint firstItem="z7y-83-M25" firstAttribute="top" secondItem="Ijl-qD-B5e" secondAttribute="top" id="R3U-x4-hEC"/>
+                            <constraint firstAttribute="bottom" secondItem="Ijl-qD-B5e" secondAttribute="bottom" id="SAI-y1-f5g"/>
+                            <constraint firstAttribute="trailing" secondItem="Ijl-qD-B5e" secondAttribute="trailing" id="xJM-px-IOc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z7y-83-M25"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="nwP-6u-T6w" id="GXs-4g-uwU"/>
+                        <outlet property="scrollView" destination="Ijl-qD-B5e" id="Tbj-Sl-fAH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3g2-Hk-VgL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1839" y="134"/>
+            <point key="canvasLocation" x="1837.5999999999999" y="133.5832083958021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="h2f-kf-Y4E">

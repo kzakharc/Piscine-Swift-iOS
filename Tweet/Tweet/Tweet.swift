@@ -15,7 +15,12 @@ struct Tweet: CustomStringConvertible {
     }
 
     let name: String
-    let text : String
+    let time: String
+    let text: String
     
-    
+    init(_ name: String, _ time: String, _ tweetDescription: String) {
+        self.name = name
+        self.time = time
+        self.text = tweetDescription
+    }
 }

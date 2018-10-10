@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AppleSDGothicNeo.ttc">
+            <string>AppleSDGothicNeo-Regular</string>
+            <string>AppleSDGothicNeo-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Siri" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="JK8-Kg-aoD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ask a question:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1V7-FR-Udu">
+                                <rect key="frame" x="47" y="194.5" width="281.5" height="20.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HJS-Me-LCE">
+                                <rect key="frame" x="47" y="225" width="281" height="167"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6nf-AO-3f6">
+                                        <rect key="frame" x="0.0" y="0.0" width="281" height="124"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBF-9h-uPV">
+                                        <rect key="frame" x="0.0" y="134" width="281" height="33"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.20042273116438356" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <state key="normal" title="Ask">
+                                            <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpn-dd-45D">
+                                <rect key="frame" x="47" y="402" width="281.5" height="20.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="... answer here ..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tw-69-lli">
+                                <rect key="frame" x="47" y="432.5" width="281" height="20.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="JK8-Kg-aoD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="237-QP-grM"/>
+                            <constraint firstItem="5tw-69-lli" firstAttribute="leading" secondItem="bpn-dd-45D" secondAttribute="leading" id="2AQ-fo-IJi"/>
+                            <constraint firstItem="HJS-Me-LCE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-25" id="4cV-kg-9bV"/>
+                            <constraint firstItem="HJS-Me-LCE" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="9Kx-hI-gol"/>
+                            <constraint firstItem="5tw-69-lli" firstAttribute="top" secondItem="bpn-dd-45D" secondAttribute="bottom" constant="10" id="CD0-W9-Dgu"/>
+                            <constraint firstItem="bpn-dd-45D" firstAttribute="width" secondItem="HJS-Me-LCE" secondAttribute="width" id="CDX-UY-5Yz"/>
+                            <constraint firstItem="1V7-FR-Udu" firstAttribute="leading" secondItem="HJS-Me-LCE" secondAttribute="leading" id="CJq-su-sQc"/>
+                            <constraint firstItem="JK8-Kg-aoD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="CXY-oj-j7u"/>
+                            <constraint firstItem="5tw-69-lli" firstAttribute="width" secondItem="bpn-dd-45D" secondAttribute="width" id="Jgt-Vv-vRR"/>
+                            <constraint firstItem="JK8-Kg-aoD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RQl-DL-M0b"/>
+                            <constraint firstItem="JK8-Kg-aoD" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="VyV-8E-VJP"/>
+                            <constraint firstItem="1V7-FR-Udu" firstAttribute="width" secondItem="HJS-Me-LCE" secondAttribute="width" id="cSo-VS-OEL"/>
+                            <constraint firstItem="HJS-Me-LCE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="cn8-la-rIB"/>
+                            <constraint firstItem="bpn-dd-45D" firstAttribute="top" secondItem="HJS-Me-LCE" secondAttribute="bottom" constant="10" id="fDY-9X-urI"/>
+                            <constraint firstItem="bpn-dd-45D" firstAttribute="leading" secondItem="HJS-Me-LCE" secondAttribute="leading" id="mj5-9a-auz"/>
+                            <constraint firstItem="HJS-Me-LCE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nLL-Yi-rzM"/>
+                            <constraint firstItem="HJS-Me-LCE" firstAttribute="top" secondItem="1V7-FR-Udu" secondAttribute="bottom" constant="10" id="vt8-GR-CG6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21.600000000000001" y="31.934032983508249"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="372" height="696"/>
+    </resources>
+</document>

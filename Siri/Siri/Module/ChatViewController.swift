@@ -42,6 +42,8 @@ class ChatViewController: MessagesViewController, MessageInputBarDelegate {
     }
     
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
+        let text = text.trimmingCharacters(in: .whitespaces)
+        if text.isEmpty { return }
         
         let message = Message(user: "bot", content: inputBar.inputTextView.text)
         insertNewMessage(message)

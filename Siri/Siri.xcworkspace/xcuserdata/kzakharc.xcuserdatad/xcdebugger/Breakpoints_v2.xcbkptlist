@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Siri/Module/ChatViewController.swift"
-            timestampString = "560979303.951854"
+            timestampString = "560980462.1827"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
@@ -138,13 +138,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Siri/Module/ChatViewController.swift"
-            timestampString = "560979303.952237"
+            timestampString = "560980462.183015"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
             endingLineNumber = "72"
-            landmarkName = "numberOfMessages(in:)"
-            landmarkType = "7">
+            landmarkName = "ChatViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Siri/Module/ChatViewController.swift"
-            timestampString = "560979303.9525191"
+            timestampString = "560980462.183297"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"

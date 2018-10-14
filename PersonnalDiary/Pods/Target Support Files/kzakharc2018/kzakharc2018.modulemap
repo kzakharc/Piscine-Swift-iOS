@@ -1,0 +1,6 @@
+framework module kzakharc2018 {
+  umbrella header "kzakharc2018-umbrella.h"
+
+  export *
+  module * { export * }
+}

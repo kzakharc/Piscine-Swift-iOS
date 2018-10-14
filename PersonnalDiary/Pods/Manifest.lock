@@ -1,0 +1,16 @@
+PODS:
+  - kzakharc2018 (0.1.0)
+
+DEPENDENCIES:
+  - kzakharc2018 (from `~/Pod/kzakharc2018`)
+
+EXTERNAL SOURCES:
+  kzakharc2018:
+    :path: "~/Pod/kzakharc2018"
+
+SPEC CHECKSUMS:
+  kzakharc2018: bbc6e78ee37ec30d392c64942917662e6ed1c1ee
+
+PODFILE CHECKSUM: 3aaa0d1bbd900ebbb7b69be555e8faee11c72ddc
+
+COCOAPODS: 1.5.3

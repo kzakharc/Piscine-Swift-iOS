@@ -1,0 +1,9 @@
+
+/* Class = "UIButton"; normalTitle = "Choose picture"; ObjectID = "KTU-w4-lDQ"; */
+"KTU-w4-lDQ.normalTitle" = "Choose picture";
+
+/* Class = "UIButton"; normalTitle = "Take picture"; ObjectID = "WUo-Oz-Luz"; */
+"WUo-Oz-Luz.normalTitle" = "Take picture";
+
+/* Class = "UINavigationItem"; title = "Auth"; ObjectID = "rdN-MF-AgX"; */
+"rdN-MF-AgX.title" = "Auth";

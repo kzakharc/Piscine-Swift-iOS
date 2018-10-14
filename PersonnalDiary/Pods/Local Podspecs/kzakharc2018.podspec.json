@@ -1,0 +1,25 @@
+{
+  "name": "kzakharc2018",
+  "version": "0.1.0",
+  "summary": "Think: What does it do? Why did you write it? What is the focus?",
+  "swift_version": "4.0.3",
+  "description": "Think: What does it do? Why did you write it? What is the focus? Think: What does it do? Why did you write it? What is the focus? Think: What does it do? Why did you write it? What is the focus? Think: What does it do? Why did you write it? What is the focus?",
+  "homepage": "https://github.com/kzakharc/kzakharc2018",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "kzakharc": "kzakharc@student.unit.ua"
+  },
+  "source": {
+    "git": "https://github.com/kzakharc/kzakharc2018.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "kzakharc2018/Classes/**/*",
+  "resources": "kzakharc2018/Assets/*.xcdatamodeld",
+  "frameworks": "CoreData"
+}

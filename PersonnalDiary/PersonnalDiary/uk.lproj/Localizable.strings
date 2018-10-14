@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  PersonnalDiary
+
+  Created by Kateryna Zakharchuk on 10/13/18.
+  Copyright © 2018 Kateryna Zakharchuk. All rights reserved.
+*/
+
+//AuthViewController
+
+"You have to be authenticate to use this Diary" = "Ви маєте підтвердити свою особу для використання цього Щоденника";
+"Auth" = "Автентифікація";
+
+//DiaryViewController
+
+"Diary" = "Щоденник";
+"created at: " = "створено: ";
+"updated at: " = "змінено: ";
+"Delete" = "Видалити";
+
+//NewArticleViewController
+
+"Device has no camera." = "В цього девайсу відсутня камера.";
+"Article" = "Стаття";
+"Take picture" = "Нове фото";
+"Choose picture" = "Вибрати фото";
